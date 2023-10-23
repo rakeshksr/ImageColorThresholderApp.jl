@@ -5,16 +5,16 @@ using ColorTypes
 
 export image_color_thresholder_app, image_color_threshold
 
-Base.@kwdef struct PlotProp
-    type::Type{<:Color3}
+Base.@kwdef struct PlotProp{T<:Color3}
+    type::Type{T}
     alpha_type::Type{<:ColorAlpha}
     type_string::String
     color_properties::NTuple{3,Symbol}
     names::NTuple{3,String}
     lengths::NTuple{3,Int}
     range::NTuple{3,NTuple{2,Int}}
-    color_range::NTuple{3,NTuple{2,<:Color3}}
-    background_color::Color3
+    color_range::NTuple{3,NTuple{2,T}}
+    background_color::T
 end
 
 """
@@ -33,8 +33,7 @@ It needs to export from GUI
 """
 function image_color_threshold end
 
-
-function generate_code(ch1::NTuple{2,T}, ch2::NTuple{2,T}, ch3::NTuple{2,T}, it::Bool, type_string::String, bg::Color3, color_properties::NTuple{3,Symbol}) where {T<:Real}
+function generate_code(ch1::NTuple{2,T}, ch2::NTuple{2,T}, ch3::NTuple{2,T}, it::Bool, type_string::String, bg::C, color_properties::NTuple{3,Symbol}) where {T<:Real,C<:Color3}
     _bg = replace("$bg", r"{.*}" => "")
     cnd = ifelse(it, "!(_cnd)", "_cnd")
     fcode = """
@@ -51,7 +50,7 @@ function generate_code(ch1::NTuple{2,T}, ch2::NTuple{2,T}, ch3::NTuple{2,T}, it:
     return fcode
 end
 
-function _find_postion(val::T, arr::AbstractVector{T}, st::Real) where {T}
+function _find_postion(val::T, arr::AbstractVector{T}, st::R) where {T,R<:Real}
     floor(Int, float(val - first(arr)) / st) + 1
 end
 
