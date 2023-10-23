@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
     tags: ['*']
   pull_request:
   workflow_dispatch:
@@ -19,7 +19,6 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - '1.0'
           - '1.9'
           - 'nightly'
         os:

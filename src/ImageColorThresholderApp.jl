@@ -70,7 +70,7 @@ end
 function plot_channel(channel_grid::GridLayout, channel_slr::IntervalSlider, channel_vals::Vector{<:Real}, props::PlotProp, nchannel::Int)
     channel_extrema = extrema(channel_vals)
     chist_clrs = range(props.color_range[nchannel][1], props.color_range[nchannel][2], length=props.lengths[nchannel])
-    channel_hist_clrs_range = range(_find_postion(channel_extrema[1], chist_clrs, props.color_properties[nchannel]), _find_postion(channel_extrema[2], chist_clrs, props.color_properties[nchannel]))
+    channel_hist_clrs_range = range(_find_postion(channel_extrema[1], chist_clrs, props.color_properties[nchannel]), _find_postion(channel_extrema[2], chist_clrs, props.color_properties[nchannel]), step=1)
     channel_hist_bins = length(channel_hist_clrs_range)
     channel_hist_clrs = lift(channel_slr.interval) do i
         _clrs = map(chist_clrs) do c
