@@ -1,6 +1,8 @@
 using ImageColorThresholderApp
+using Makie
+using ColorTypes
 using Test
 
 @testset "ImageColorThresholderApp.jl" begin
-    # Write your tests here.
+    include("imagechannels.jl")
 end
