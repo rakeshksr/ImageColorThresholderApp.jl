@@ -11,3 +11,7 @@ makedocs(
         "API" => "api.md"
     ]
 )
+
+deploydocs(
+    repo = "github.com/rakeshksr/ImageColorThresholderApp.jl.git",
+)
