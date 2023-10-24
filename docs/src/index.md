@@ -35,20 +35,3 @@ using Pkg
 Pkg.add(url="https://github.com/rakeshksr/ImageColorThresholderApp.jl")
 ```
 
-## Usage
-
-```julia
-using GLMakie
-using ImageColorThresholderApp
-using TestImages
-
-img = testimage("monarch_color")
-image_color_thresholder_app(img)
-```
-![preview](./assets/preview.png)
-
-## Supported Image color formats
-- RGB
-- HSV
-- Lab
-- YCbCr

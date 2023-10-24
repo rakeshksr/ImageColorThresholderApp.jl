@@ -52,7 +52,7 @@ using TestImages
 img = testimage("monarch_color")
 image_color_thresholder_app(img)
 ```
-![preview](./docs/src/assets/preview.png)
+![preview](./docs/src/assets/rgb.png)
 
 ## Supported Image color formats
 - RGB

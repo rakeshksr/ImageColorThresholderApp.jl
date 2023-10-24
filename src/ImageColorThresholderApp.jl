@@ -29,7 +29,9 @@ mask, timg = image_color_threshold(img[, bg])
 - `timg`: thresholded image
 
 !!! warning
-It needs to export from GUI
+    
+    It needs to export from GUI
+
 """
 function image_color_threshold end
 
