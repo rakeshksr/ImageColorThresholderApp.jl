@@ -1,7 +1,7 @@
 name = "ImageColorThresholderApp"
 uuid = "e253f47c-99a5-4462-a47e-a31f992eca7c"
 authors = ["rakeshksr <rakeshksr@users.noreply.github.com>"]
-version = "0.1.0"
+version = "0.2.0"
 
 [deps]
 ColorTypes = "3da002f7-5984-5a60-b8a6-cbb66c0b333f"
